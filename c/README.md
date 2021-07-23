@@ -216,5 +216,5 @@ ex) Vscode에서 scanf 입출력이 안될 때<br>
 - 반복문 내부에 다른 반복문이 존재하는 것을 뜻함
 - 연산횟수는 제곱 형태로 늘어남
 - [구구단 출력_while](210723-05-8-WhileMultiplicationTable.c)
-- [구구단 출력_For](210723-05-8-ForMultiplicationTable.c)
+- [구구단 출력_For](210723-05-9-ForMultiplicationTable.c)
   
