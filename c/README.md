@@ -423,3 +423,40 @@ void (*func)() = myfunc;
 - [매개변수 및 반환자료형 없는 것](210726-14-2-funcpointernot.c)
 - [매개변수 및 반환자료형 있는 것](210726-14-3-funcpointer.c)
 - [함수포인터 반환하기](210726-14-4-funcreturn.c)
+
+# 16-구조체
+- 여러개의 변수를 묶어 `하나의 객체를 표현`하고자 할때 구조체 사용
+- 예를들어 캐릭터, 몬스터, 학생, 좌표 등 다양한 객체를 모두 프로그래밍 언어를 이용해 표현함.
+
+  ```C
+  struct 구조체명{
+    자료형1 변수명1;
+    자료형2 변수명2;
+  }
+  ```
+
+## 정의와 선언
+  - 한 명의 학생에 대한 정보를 담고 있는 구조체
+    ```C
+    struct Student{
+      char studentld[10];
+      char name[10];
+      int grade;
+      int major;
+    };
+    ```
+## 변수의 선언과 접근
+  -  기본적으로 구조체의 변수에 접근할때 온점(.)사용
+      ```C
+      struct Student s;
+      strcpy(s.studentId, "20101111");
+      strcpy(s.name, "lowgiant");
+      s.grade = 4; 
+      strcpy(s,major, "컴퓨터과학과")
+      ```
+
+  - [학생 구조체 만들기](210726-15-1-struct.c)
+  - [구조체 초기화](210726-15-2-structinit.c)
+  - [임의의 자료형](210726-15-3-typedef.c)
+  - [구조체 포인터변수 접근](210726-15-4-structpointer.c)
+    > `.`대신 `->`를 사용
