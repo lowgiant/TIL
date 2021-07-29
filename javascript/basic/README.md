@@ -330,3 +330,31 @@ value = 2     // 대입 연산자
     console.log(numbers.sum);
     console.log(numbers.sum);
     ```
+
+## 07-배열
+- 여러개의 항목이 들어 있음.
+
+1. 항목 추가
+    - 내장 함수인 `push()`를 사용
+        ```javascript
+        const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+
+        objects.push({
+        name: '멍뭉이'
+        });
+
+        console.log(objects);
+        ```
+2. 크기 확인
+   - `length`로 확인
+        ```javascript
+        const objects = [{ name: '멍멍이' }, { name: '야옹이' }];
+
+        console.log(objects.length);
+
+        objects.push({
+        name: '멍뭉이'
+        });
+
+        console.log(objects.length);
+        ```
