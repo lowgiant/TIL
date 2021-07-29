@@ -418,3 +418,158 @@ value = 2     // 대입 연산자
             if (i === 5) break; // 반복문을 끝내기
         }
         ```
+
+## 09-배열 내장함수
+1. forEach
+    - 배열 원소 반복문
+    - 함수형태의 파라미터를 전달함(`콜백함수`)
+    - break문 사용 못함
+        ```javascript
+        const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+
+        superheroes.forEach(hero => {
+            console.log(hero);
+        });
+        ```
+2. map
+    - 배열 원소를 `한꺼번에 값을 변경` 할때 씀
+        ```javascript
+        const array = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const squared = array.map(n => n * n);
+        console.log(squared);
+        ```
+3. indexOf
+    - 원하는 항목이 `몇번째 원소인지 찾아줌`
+        ```javascript
+        const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+        const index = superheroes.indexOf('토르');
+        console.log(index);
+        ```
+4. findIndex
+   - 배열 안의 특정 조건의 객체의 값을 찾아 `인덱스` 반환 
+    ```javascript
+        const todos = [
+    {
+        id: 1,
+        text: '자바스크립트 입문',
+        done: true
+    },
+    {
+        id: 2,
+        text: '함수 배우기',
+        done: true
+    },
+    {
+        id: 3,
+        text: '객체와 배열 배우기',
+        done: true
+    },
+    {
+        id: 4,
+        text: '배열 내장함수 배우기',
+        done: false
+    }
+    ];
+
+    const index = todos.findIndex(todo => todo.id === 3);
+    console.log(index);
+    ```
+5. find
+    - 배열 안의 특정 조건의 객체의 값을 찾아 `객체` 반환
+6. filter
+    - 특정 조건을 만족하는 값들을 `새로운 배열`로 만듬
+        ```javascript
+        const todos = [
+            {
+                id: 1,
+                text: '자바스크립트 입문',
+                done: true
+            },
+            {
+                id: 2,
+                text: '함수 배우기',
+                done: true
+            },
+            {
+                id: 3,
+                text: '객체와 배열 배우기',
+                done: true
+            },
+            {
+                id: 4,
+                text: '배열 내장함수 배우기',
+                done: false
+            }
+        ];
+        const tasksNotDone = todos.filter(todo => todo.done === false);
+        console.log(tasksNotDone);
+        ```
+7. spliec
+    - 배열의 특정 인덱스 `항목 제거`
+        ```javascript
+        const numbers = [10, 20, 30, 40];
+        const index = numbers.indexOf(30);
+        numbers.splice(index, 1);
+        console.log(numbers);
+        ```
+8. slice
+    - 배열의 인덱스 기준으로 `자름`
+        ```javascript
+        const numbers = [10, 20, 30, 40];
+        const sliced = numbers.slice(0, 2); // 0부터 시작해서 2전까지
+
+        console.log(sliced); // [10, 20]
+        console.log(numbers); // [10, 20, 30, 40]
+        ```
+9. shift
+    - 배열의 `첫번째` 원소 추출
+        ```javascript
+        const numbers = [10, 20, 30, 40];
+        const value = numbers.shift();
+        console.log(value);
+        console.log(numbers);
+        ```
+10. pop
+    - 배열의 `마지막` 원소 추출
+        ```javascript
+        const numbers = [10, 20, 30, 40];
+        const value = numbers.pop();
+        console.log(value);
+        console.log(numbers);
+        ```
+11. unshift
+    - 배열의 `맨앞`에 원소추가
+        ```javascript
+        const numbers = [10, 20, 30, 40];
+        numbers.unshift(5);
+        console.log(numbers);
+        ```
+12. concat
+    - 여러개의 배열을 `하나로 합쳐줌`
+       ```javascript
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const concated = arr1.concat(arr2);
+
+        console.log(concated);
+       ```
+13. join
+    - 배열 안의 값들을 문자열 형태로 합침
+        ```javascript
+        const array = [1, 2, 3, 4, 5];
+        console.log(array.join()); // 1,2,3,4,5
+        console.log(array.join(' ')); // 1 2 3 4 5
+        console.log(array.join(', ')); // 1, 2, 3, 4, 5
+        ```
+14. reduce
+    - 배열 처음 부터 끝까지 반복하면서 콜백함수 호출
+        ```javascript  
+        const numbers = [1, 2, 3, 4, 5];
+        let sum = numbers.reduce((accumulator, current) => {
+            console.log({ accumulator, current });
+        return accumulator + current;
+        }, 0);
+
+        console.log(sum);
+        ```
