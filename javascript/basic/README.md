@@ -156,9 +156,9 @@ value = 2     // 대입 연산자
     ```javascript
     const a = 10;
     if (a > 15) {
-    console.log('a 가 15 큽니다.');
+        console.log('a 가 15 큽니다.');
     } else {
-    console.log('a 가 15보다 크지 않습니다.');
+        console.log('a 가 15보다 크지 않습니다.');
     }
     ```
 3. if-else if문
@@ -166,11 +166,11 @@ value = 2     // 대입 연산자
   ```javascript
     const a = 10;
     if (a === 5) {
-    console.log('5입니다!');
+        console.log('5입니다!');
     } else if (a === 10) {
-    console.log('10입니다!');
+        console.log('10입니다!');
     } else {
-    console.log('5도 아니고 10도 아닙니다.');
+        console.log('5도 아니고 10도 아닙니다.');
     }
   ```
 4. switch/case 문
@@ -204,7 +204,7 @@ value = 2     // 대입 연산자
 
         // 함수로 만들기
         function add(a, b) {
-        return a + b;
+            return a + b;
         }
         const sum = add(1, 2);
         console.log(sum); // 3 
@@ -225,8 +225,8 @@ value = 2     // 대입 연산자
 - `{키: 값}` 형식
     ```javascript
     const dog = {
-    name: '멍멍이',
-    age: 2
+        name: '멍멍이',
+        age: 2
     };
 
     console.log(dog.name);
@@ -235,15 +235,15 @@ value = 2     // 대입 연산자
 2. 함수에서 객체를 파라미터로 받기
     ```javascript
     const ironMan = {
-    name: '토니 스타크',
-    actor: '로버트 다우니 주니어',
-    alias: '아이언맨'
+        name: '토니 스타크',
+        actor: '로버트 다우니 주니어',
+        alias: '아이언맨'
     };
 
     const captainAmerica = {
-    name: '스티븐 로저스',
-    actor: '크리스 에반스',
-    alias: '캡틴 아메리카'
+        name: '스티븐 로저스',
+        actor: '크리스 에반스',
+        alias: '캡틴 아메리카'
     };
 
     function print(hero) {
@@ -357,4 +357,64 @@ value = 2     // 대입 연산자
         });
 
         console.log(objects.length);
+        ```
+
+## 08-반복문
+- 특정한 작업을 반복적으로 수행
+  
+1. for문
+    - 특정 값에 변화를 주어 정한 조건이 만족 될때까지 반복
+    ```javascript
+    for (let i = 0; i < 10; i++) {
+        console.log(i);
+    }
+    ```
+2. 배열 for 활용
+    - 배열의 각 원소를 하나씩 나열
+    ```javascript
+    const names = ['멍멍이', '야옹이', '멍뭉이'];
+
+    for (let i = 0; i < names.length; i++) {
+        console.log(names[i]);
+    }
+    ```
+3. while문
+    - 조건이 참이면 계속 반복
+        ```javascript
+        let i = 0
+        while(i<10){
+            console.log(i);
+            i++;
+        }
+        ```
+4. for..or
+    - 배열를 위한 반복문
+        ```javascript
+        let numbers = [10,20,30,40];
+        for (let number of numbers){
+            console.log(number)
+        }
+        ```
+5. for...in
+    - 객체를 위한 반복문
+        ```javascript
+        const doggy = {
+            name: '멍멍이',
+            sound: '멍멍',
+            age: 2
+        };
+
+        for (let key in doggy) {
+            console.log(`${key}: ${doggy[key]}`);
+        }
+        ```
+6. break와 continue
+    - 반복문에서 멈추고 싶을 때 `break` 
+    - 특정 조건을 벗어나고 싶을 때 `continue`
+        ```javascript
+        for (let i = 0; i < 10; i++) {
+            if (i === 2) continue; // 다음 루프를 실행
+            console.log(i);
+            if (i === 5) break; // 반복문을 끝내기
+        }
         ```
