@@ -3,7 +3,7 @@
 ## 01-Hello wolrd
 - 출력문
     ```javascript
-    consloe.log("Hello world")
+    console.log("Hello world")
     ```
 - `세미콜론`(;)은 붙여도 되고 안 붙여됨
 
@@ -55,3 +55,88 @@
         let criminal; 
         conosole.log(criminal) // undefined
         ```
+## 03-연산자
+```javascript
+let value = 1 // 변수 선언
+value = 2     // 대입 연산자
+```
+
+1. 산술 연산자 
+
+    종류 | 뜻 
+    --- | ---
+    \+ | 덧셈
+    \- | 뺄셈
+    \* | 곱셈
+    \/ | 나눗셈
+
+    ```javascript
+    let a = 1 + 2  
+    console.log(a) // 3
+
+    a = 1 + 2 -(3*4) 
+    console.log(a) // 0 
+
+    let a = 1
+    a++; 
+    ++a;
+    console.log(a)  // 3
+    ```
+2. 대입 연산자 
+   - 값에 연산을 한 값을 바로 사용 할 수 있는 연산자 
+   
+    ```javascript
+    let a = 1 
+    a += 3
+    a -= 3
+    a *= 3
+    a /= 3
+    console.log(a)
+    ```
+3. 논리 연산자
+- 불리언 타입을 위한 연산자
+    종류 | 뜻 
+    :---: | ---
+    \! | NOT(반대로 표현)
+    \&& | AND(둘다 참일때 참)
+    \OR | OR(한쪽 참일때 참)
+
+4. 비교 연산자
+- 두 값을 비교 할 때 사용
+    1. 두 값이 일치하는지 확인
+        ```javascript
+        const a = 1;
+        const b = 1;
+        const equals =  a === b;
+        console.log(equals) // true
+
+        const a = 0;
+        const b = false;
+        const equals =  a == b;
+        console.log(equals) // true
+        ```
+    2. 두 값이 일치하지 않는지 확인
+        ```javascript
+        const value = 'a' !== 'b';
+        console.log(value);
+        ```
+    3. 크고 작음
+        ```javascript
+        const a = 10;
+        const b = 15;
+        const c = 15;
+
+        console.log(a < b);  // true
+        console.log(b > a);  // true
+        console.log(b >= c); // true
+        console.log(a <= c); // true
+        console.log(b < c);  // false;
+        ```
+5. 문자열 붙이기
+- +로 할 수 있음
+    ```javascript
+    const a = '안녕';
+    const b = '하세요';
+    console.log(a + b); // 안녕하세요
+    ```
+## 04-
