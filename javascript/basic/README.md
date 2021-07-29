@@ -218,3 +218,115 @@ value = 2     // 대입 연산자
 
         console.log(add(1, 2));
         ```
+
+## 06-객체
+1. 객체
+- 변수 및 상수에 하나의 이름에 `여러 종류의 값`을 넣는 것
+- `{키: 값}` 형식
+    ```javascript
+    const dog = {
+    name: '멍멍이',
+    age: 2
+    };
+
+    console.log(dog.name);
+    console.log(dog.age);
+    ```
+2. 함수에서 객체를 파라미터로 받기
+    ```javascript
+    const ironMan = {
+    name: '토니 스타크',
+    actor: '로버트 다우니 주니어',
+    alias: '아이언맨'
+    };
+
+    const captainAmerica = {
+    name: '스티븐 로저스',
+    actor: '크리스 에반스',
+    alias: '캡틴 아메리카'
+    };
+
+    function print(hero) {
+    const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${
+        hero.actor
+    } 입니다.`;
+    console.log(text);
+    }
+
+    print(ironMan);
+    print(captainAmerica);
+    ```
+3. 객체 비 구조화
+- 객체의 내부의 값을 조회 할 때 유용
+    ```javascript
+    const ironMan = {
+    name: '토니 스타크',
+    actor: '로버트 다우니 주니어',
+    alias: '아이언맨'
+    };
+
+    const captainAmerica = {
+    name: '스티븐 로저스',
+    actor: '크리스 에반스',
+    alias: '캡틴 아메리카'
+    };
+
+    function print(hero) {
+    const { alias, name, actor } = hero;
+    const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다.`;
+    console.log(text);
+    }
+
+    print(ironMan);
+    print(captainAmerica);
+    ```
+4. 객체 안에 함수 넣기
+- 화살표 함수로 선언은 작동 안됨
+    ```javascript
+    const dog = {
+    name: '멍멍이',
+    sound: '멍멍!',
+    say: function() {
+        console.log(this.sound);
+    }
+    };
+
+    dog.say();
+    ```
+5. Getter 함수와 Setter함수
+- 특정 값을 바꾸거나 조회할 때 사용
+    ```javascript
+    const numbers = {
+    _a: 1,
+    _b: 2,
+    sum: 3,
+    calculate() {
+        console.log('calculate');
+        this.sum = this._a + this._b;
+    },
+    get a() {
+        return this._a;
+    },
+    get b() {
+        return this._b;
+    },
+    set a(value) {
+        console.log('a가 바뀝니다.');
+        this._a = value;
+        this.calculate();
+    },
+    set b(value) {
+        console.log('b가 바뀝니다.');
+        this._b = value;
+        this.calculate();
+    }
+    };
+
+    console.log(numbers.sum);
+    numbers.a = 5;
+    numbers.b = 7;
+    numbers.a = 9;
+    console.log(numbers.sum);
+    console.log(numbers.sum);
+    console.log(numbers.sum);
+    ```
