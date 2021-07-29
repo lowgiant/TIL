@@ -573,3 +573,112 @@ value = 2     // 대입 연산자
 
         console.log(sum);
         ```
+## 10-프로토타입과 클래스
+1. 객체 생성자
+    - 함수를 통해 새로운 객체 만듬
+    - 객체 안에 넣고 싶은 값, 함수 구현
+        ```javascript
+        function Animal(type, name, sound) {
+        this.type = type;
+        this.name = name;
+        this.sound = sound;
+        this.say = function() {
+            console.log(this.sound);
+        };
+        }
+
+        const dog = new Animal('개', '멍멍이', '멍멍');
+        const cat = new Animal('고양이', '야옹이', '야옹');
+
+        dog.say();
+        cat.say();
+        ```
+2. 프로토타입
+    - 객체 생성자의 초기값 설정
+ 
+        ```javascript
+        function Animal(type, name, sound) {
+        this.type = type;
+        this.name = name;
+        this.sound = sound;
+        }
+
+        Animal.prototype.say = function() {
+            console.log(this.sound); 
+        };
+        Animal.prototype.sharedValue = 1;
+
+        const dog = new Animal('개', '멍멍이', '멍멍');
+        const cat = new Animal('고양이', '야옹이', '야옹');
+
+        dog.say(); // 멍멍
+        cat.say(); // 야옹
+
+        console.log(dog.sharedValue); // 1
+        console.log(cat.sharedValue); // 1
+        ```
+3. 객체 생성자 상속받기
+    - .call(this,~)를 사용
+    - prototype 따로 연결
+        ```javascript
+        function Animal(type, name, sound) {
+        this.type = type;
+        this.name = name;
+        this.sound = sound;
+        }
+
+        Animal.prototype.say = function() {
+            console.log(this.sound);
+        };
+        Animal.prototype.sharedValue = 1;
+
+        function Dog(name, sound) {
+            Animal.call(this, '개', name, sound);
+        }
+        Dog.prototype = Animal.prototype;
+
+        function Cat(name, sound) {
+            Animal.call(this, '고양이', name, sound);
+        }
+        Cat.prototype = Animal.prototype;
+
+        const dog = new Dog('멍멍이', '멍멍');
+        const cat = new Cat('야옹이', '야옹');
+
+        dog.say();
+        cat.say();
+        ```
+4. 클래스
+    - js에 없다가 ES6부터 문법 추가
+        ```javascript
+        class Animal {
+        constructor(type, name, sound) {
+            this.type = type;
+            this.name = name;
+            this.sound = sound;
+        }
+        }
+        //상속 
+        class Dog extends Animal {
+        constructor(name, sound) {
+            // 함수가 상속 받은 클래스의 생성자
+            super('개', name, sound);
+        }
+        }
+
+        class Cat extends Animal {
+        constructor(name, sound) {
+            super('고양이', name, sound);
+        }
+        }
+
+        const dog = new Dog('멍멍이', '멍멍');
+        const dog2 = new Dog('왈왈이', '왈왈');
+        const cat = new Cat('야옹이', '야옹');
+        const cat2 = new Cat('냐옹이', '냐옹');
+
+        dog.say();
+        dog2.say();
+        cat.say();
+        cat2.say();
+        ```
