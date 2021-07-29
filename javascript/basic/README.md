@@ -191,3 +191,30 @@ value = 2     // 대입 연산자
         console.log('모르겠네요..');
     }
     ```
+
+## 05-함수
+1. 함수
+   - `특정 코드`를 `하나의 명령`으로 실행
+        ```javascript
+        // 변수로 더하기
+        const a = 1;
+        const b = 2;
+        const sum = a + b;
+        console.log(sum); //3 
+
+        // 함수로 만들기
+        function add(a, b) {
+        return a + b;
+        }
+        const sum = add(1, 2);
+        console.log(sum); // 3 
+        ```
+2. 화살표 함수
+    - 기존 함수 선언을 간소화
+        ```javascript
+        const add = (a, b) => {
+        return a + b;
+        };
+
+        console.log(add(1, 2));
+        ```
