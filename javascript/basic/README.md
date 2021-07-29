@@ -55,6 +55,7 @@
         let criminal; 
         conosole.log(criminal) // undefined
         ```
+
 ## 03-연산자
 ```javascript
 let value = 1 // 변수 선언
@@ -139,4 +140,54 @@ value = 2     // 대입 연산자
     const b = '하세요';
     console.log(a + b); // 안녕하세요
     ```
-## 04-
+
+## 04-조건문 
+1. if문
+- ~하다면 ~를 해라
+- `조건을 만족`해야지 안에 코드가 실행이 됨.
+    ```javascript
+    const a= 1;
+    if (a+1 === 2){
+        console.log('a + 1이 2입니다.')
+    }
+    ```
+2. if-else문
+- ~하다면 ~하고, 그렇지 않다면 ~해라
+    ```javascript
+    const a = 10;
+    if (a > 15) {
+    console.log('a 가 15 큽니다.');
+    } else {
+    console.log('a 가 15보다 크지 않습니다.');
+    }
+    ```
+3. if-else if문
+- 여러 조건에 따라 작업
+  ```javascript
+    const a = 10;
+    if (a === 5) {
+    console.log('5입니다!');
+    } else if (a === 10) {
+    console.log('10입니다!');
+    } else {
+    console.log('5도 아니고 10도 아닙니다.');
+    }
+  ```
+4. switch/case 문
+- 조건이 많을 경우 사용
+    ```javascript
+    const device = 'iphone';
+    switch (device) {
+    case 'iphone':
+        console.log('아이폰!');
+        break;
+    case 'ipad':
+        console.log('아이패드!');
+        break;
+    case 'galaxy note':
+        console.log('갤럭시 노트!');
+        break;
+    default:
+        console.log('모르겠네요..');
+    }
+    ```
