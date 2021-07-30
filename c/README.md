@@ -1,6 +1,6 @@
 # C언어
 
-## 1) [Basic](./basic/README.md)
+## 1) [Basic](./basic/)
 
 1. 환경설정
     - mac
