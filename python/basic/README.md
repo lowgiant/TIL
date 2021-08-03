@@ -169,3 +169,45 @@
     values |value 반환 | class_total.values() <br> `dict_values([123, 456])`
     items | key,value 쌍을 반환 | class_total.items() <br> `dict_items([('a', 123), ('b', 456)])`
     get | key에 대한 값을 반환 | class_total.get('a') <br> `123`
+    
+## 03-제어문
+1. 특징
+    - 특정 조건의 참, 거짓에 따라 작성한 코드 동작
+2. if문
+    ```python
+    place_status = 'home'
+    if home_status == 'home':
+        print("집에 있음")
+    elif home_status == 'company'
+        print("회사에 있음")
+    else: 
+        print("개인 일정")
+    ```
+3. 자료형 별 참거짓
+    종류 | 설명 | 사용 방법
+    :---: | --- | ---
+    숫자형 | 0이 아닌 수 | 0
+    문자열 | 빈 문자열이 아닌 문자열 | ""
+    리스트 | 빈 리스트가 아닌 리스트 | []
+    튜플 | 빈 튜플이 아닌 튜플 | ()
+    딕셔너리 | 빈 딕셔너리가 아닌 딕셔너리 | {}
+4. 비교연산자
+     연산자 | 설명 
+    :---: | ---
+    x `<` y | x가 y보다 `작다`
+    x `>` y | x가 y보다 `크다`
+    x `==` y | x와 y가 `같다`
+    x `!=` y | x와 y는 `다르다`
+    x `>=` y | x가 y보다 `크거나 같다`
+    x `<=` y | x가 y보다 `작거나 같다`
+    x `and` y | x와 y가 `둘다 참`이면 참
+    x `or` y | x 또는 y가 `하나 이상 참`이면 참
+    `not` x | x기 `거짓`이면 참
+    x `in` 리스트 | 리스트에 x가 `있으면` 참
+    x `in` 튜플 | 튜플에 x가 있으면 참
+    x `in` 문자열 | 문자열에 x가 있으면 참
+    x `in` 딕셔너리 | 딕셔너리에 x가 있으면 참
+    x `not in` 리스트 | 리스트에 x가 `없으면` 참
+    x `not in` 튜플 | 튜플에 x가 없으면 참
+    x `not in` 문자열 | 문자열에 x가 없으면 참
+    x `not in` 딕셔너리 | 딕셔너리에 x가 없으면 참
