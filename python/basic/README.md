@@ -317,3 +317,33 @@
 4. \_\_name__ 내장변수
     - 해당 클래스를 어디서 실행했는지 나타냄
     - from~import 의해서는 실행이 안됨
+
+## 08-파일 입출력
+1. 특징
+    - 텍스트파일 데이터 읽고 쓰기
+        ```python  
+        변수명 = open(파일명, 읽고 쓰고 등 설정)
+        file_name = open('data.txt', 'r')
+        ```
+2. openpyxl
+    - 엑셀 다루는 패키지
+        ```python
+        #파일 읽기
+        from openpyxl import load_workbook
+        wb = load_workbook(파일명)
+        # 실행
+        data = wb.active
+
+        # 엑셀 시트 A1 있는 값 가져오기
+        data['A1'].value 
+
+        #파일 쓰기
+        from openpyxl import Workbook
+        wb = Workbook()
+        ws = wb.create_sheet(파일명)
+
+        ws['A1'] = 넣고싶은 값
+        ```
+    1. load_workbook 문제점
+        - 엑셀 내용 한번에 다 가져옴
+        - 파일이 클 경우 못 가져올 수도 있음
