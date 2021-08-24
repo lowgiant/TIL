@@ -14,5 +14,10 @@ public class StudentTest {
 
         System.out.println(studentKim);
         System.out.println(studentLee);
+
+        System.out.println("-----------");
+
+        Student studentjin = new Student("진이", "광주");
+        studentjin.showStudentInfo();
     }
 }
