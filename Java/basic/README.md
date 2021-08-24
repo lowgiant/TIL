@@ -301,3 +301,37 @@
 ### 2) continue
 - 반복문 내부에서 조건문와 같이 사용
 - 조건이 맞는 경우 이후 반복문 블러 내부의 다른 수행문들을 수행하지 않음
+
+## 09-객체지향
+### 1) 객체(objcet)
+- 의사나 행위가 미치는 대상
+- 구체적, 추상적 데이터의 단위
+### 2) 클래스 스타일
+- 클래스는 대문자로 시작
+- public 클래스와 .java 파일의 이름 동일함
+- camel notaion 방식으로 명명
+### 3) 클래스 구현 설명 및 멤버 변수 선언
+1. 객체 정의
+2. 각 객체의 속성을 멤버 변수로 역할을 메서드로 구현
+3. 각 객체간의 협력을 구현
+4. 예제
+   - 학생클래스
+     ```java
+     public class Student{
+       int studentNumber;
+       String sutdentName;
+       int majorCode;
+       String majorName;
+       int grade;
+     }
+     ```
+   - 주문클래스
+     ```java
+     public class Order{
+       int orderId;
+       String buyerId;
+       String sellerId;
+       int productId;
+       String orderDate;
+     }
+     ```
