@@ -17,7 +17,20 @@ public class StudentTest {
 
         System.out.println("-----------");
 
-        Student studentjin = new Student("진이", "광주");
-        studentjin.showStudentInfo();
+        Student studentJin = new Student("진이", "광주");
+        studentJin.showStudentInfo();
+
+        Student studentPark = new Student(100, "Park");
+        studentPark.setKoreaSubject("국어", 100);
+        studentPark.setMathSubject("수학", 95);
+
+
+        Student studentKing = new Student(101, "King");
+        studentKing.setKoreaSubject("국어", 80);
+        studentKing.setMathSubject("수학", 99);
+
+        studentPark.showStudentSocre();
+        studentKing.showStudentSocre();
+
     }
 }
