@@ -322,7 +322,7 @@
        String sutdentName;
        int majorCode;
        String majorName;
-       int grade;
+       int grade; 
      }
      ```
    - 주문클래스
@@ -705,3 +705,26 @@
     - clone() 메서드를 사용해 객체의 정보가 동일한 또 다른 인스턴스가 생성됨
     - 객체 지향 프로그램에서의 정보은닉, 객체 보호의 관점에서 위배 될 수 있음
     - 해당 클래스의 clone() 메서드의 사용을 허용한다는 의미로 cloneable 인터페이스를 명시해 줌
+
+## 27-String * 클래스
+### 1) String
+- 선언  
+    ```java
+    String abc = new String("abc");
+    String abc = "abc";
+    ```
+- 힙 메모리에 인스턴슨로 생성되는 경우 상수 풀(constant pool)에 있는 주소를 참조하는 두가지 방법
+- 힙 메모리는 생성될때마다 다른 주소 값을 가지지만, 상수 풀의 문자열은 모두 같은 주소 값을 가짐
+- 한번 생성된 String은 불변
+- String을 연결하면 기존의 String에 연결 되는 것이 아니며, 새로운 문자열이 생성됨
+### 2) StringBulider, StringBuffer 활용
+- 내부적으로 가변적인 char[]를 멤버 변수로 가짐
+- 문자열을 여러번 연결해 변경할 때 사용하면 유용함
+- 새로운 인스턴스 생성하지 않고 char[] 변경함
+- StringBuffer는 멀티 쓰레드 프로그래밍에서 동기화를 보장
+- 단일 쓰레드 프로그램에선 StringBuilder 사용을 권장
+- toString() 메서드로 String 반환
+### 3) text block
+- java 13
+- 문자열 """ """ 사이에 이어서 만들 수 있음
+- html, json 문자열 만드는데 유용
