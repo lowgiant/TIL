@@ -773,3 +773,55 @@
   - 자료를 검색하기 위한 자료구조
   - 키(Key)에 대한 자료를 검색하기 위한 사전 개념의 자료구조
   - key는 유일하고 이에 대한 value를 쌍으로 저장
+
+## 29-제네릭
+### 1) 특징
+- 클래스에서 사용하는 변수의 자료형이 여러개 일때나, 그 기능은 동일한 경우 클래스의 자료형을 특정하지 않고 추후 해당 클래스를 사용할 때 지정 할 수 있도록 선언
+- 실제 사용되는 자료형의 변환은 컴파일러에 의해 검증되므로 안정적인 프로그래밍 방식
+- 컬렉션 프레임원크에서 많이 사용되고 있음
+### 2) 사용 안할 경우
+- Object 사용 후 형변환 해야함
+### 3) 제네릭 클래스 정의
+- 자료형 매개변수 T(type paramater)
+    - 이 클래스를 사용한 시점에 실제 사용할 자료형을 지정
+    - static 변수는 사용할 수 없음
+- GenericPrinter: 제너릭 자료형
+- E: element
+- K: key
+- V: value
+- 여러 알파벳을 의미 따라 사용 가능
+  ```java
+  public class GenericPrinter<T> {
+      private T material;
+
+      public void setMaterial(T material){
+          this.material = material;
+      }
+
+      public T getMaterial() {
+          return material;
+      }
+      public String toString(){
+          return material.toString();
+      }
+  }
+  ```
+### 4) \<T extends 클래스\> 사용하기
+1. 상위 클래스의 필요성
+    - T 자료형의 범위를 제한 할 수 있음
+    - 상위 클래스에서 선언하거나 정의하는 메서드를 활용 할 수 있음
+    - 상속을 받지 않은 경우 T는 Object로 변환돼 Object 클래스가 기본으로 제공하는 메서드만 사용가능
+2. T extends를 사용한 프로그래밍
+    - GenricPrinter에 material 변수의 자료형을 상속 받아 구현
+    - T에 무작위 클래스가 들어갈 수 없게 Material 클래스를 상속 받은 클래스 한정
+- 예제
+  - [GenericPrinterTest](./code/GenericPrinterTest.java)
+  - [GenericPrinter](./code/GenericPrinter.java)
+  - [Plastic](./code/Plastic.java)
+  - [Powder](./code/Powder.java)
+  - [Material](./code/Material.java)
+### 5) 제네릭 메서드 활용
+- 자료형 매개변수를 메서드의 매개변수나 반환 값으로 가지는 메서드
+- 자료형 매개변수가 하나 이상인 경우도 있음
+- 제네릭 클래스가 아니어도 내부에 제네릭 메서드는 구현하여 사용 할 수 있음
+- Public<자료형 매개변수> 반환형 메서드 이름(자료형 매개변수..){}
