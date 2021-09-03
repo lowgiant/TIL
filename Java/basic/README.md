@@ -1004,4 +1004,33 @@ static void sTest()| 정적 내부 클래스의 인스턴스 변수(inNum) | X
   - 파일이나 콘솔에 로그 내용을 출력할 수 있음
   - jre/lib/logging.properties 파일을 편집해 로그의 출력방식 로그 레벨을 변경 가능
   - loggin 패키지에서 제공하는 로그레벨은 severe, warning, info, config, fine, finer,finest
-  - 오픈소스로는 log4j를 많이 사용함 
+  - 오픈소스로는 log4j를 많이 사용함
+
+## 34-I/O 스트림
+### 1) 특징
+- 네트워크에서 자료의 흐름이 물의 흐름과 같다는 비유에서 유래됨
+- 자바는 다양한 입출력 장치에 독립적으로 일관성 있는 입출력을 입출력 스트림을 통해 제공
+- 입출력 구현되는 곳: 파일 디스크, 키보드 마우스, 메모리등 모든 자료가 입출력되고 출력되는 곳
+### 2) 대상 구분
+1. 입력 스트림
+   - 대상으로 부터 자료를 읽어 들이는 스트림
+   - FileInputStream, FileReader, BuffereInPutStream, BufferedReader 등
+2.  출력 스트림
+   - 대상으로 자료를 출력하는 스트림
+   - FileOutputStream, FileWriter, BufferedOutputStream, BufferedWriter 등
+### 3) 자료 구분
+1. 바이트 스트림
+  - 동영상, 음악파일, 실행 파일 등의 자료를 읽고 쓸 때 사용
+  - FileInputStream, FileOupStream, BufferedInputStream, BufferedOutputStream
+2. 문자 스트림
+  - 바이트 단위로 자료를 처리하면 문자는 깨짐
+  - 인코딩에 맞게 2바이트 이상으로 처리하도록 구현된 스트림
+  - FileReader, FileWriter, BufferedReader,BufferedWriter
+### 4) 기능 구분
+1. 기반 스트림
+  - 대상에 직접 자료를 읽고 쓰는 기능의 스트림
+  - FileInputStream, FileOutStream, FileReader, FileWriter 
+2. 보조 스트림
+  - 직접 읽고 쓰는 기능은 없이 추가적인 기능을 더해주는 스트림
+  - 보조 스트림은 직접 읽고 쓰는 기능은 없으므로 항상 기반 스트림 또 다른 보조 스트림을 생성자의 매개변수로 포함함
+  - InputStreamReader, OutputStreamWriter, BufferedInputStream, BufferedOutputStream
