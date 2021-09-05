@@ -1039,5 +1039,20 @@ static void sTest()| 정적 내부 클래스의 인스턴스 변수(inNum) | X
 ### 1) 특징
 - 인스터스의 상태를 그대로 파일 저장하거나 네트워크로 전송하고 이를 다시 복원 하는 방식
 - 자바에서는 보조 스트림을 활용해 직렬화를 제공함
+  | 생성자 | 설명|
+  | --- | --- |
+  ObjectInputStream(InputStream in) | InputStream을 생성자의 매개변수로 받아 ObjectInputStream을 생성
+  ObjectOutputStream(OutputStream out) | OutputStream을 생성자의 매개변수로 받아 ObjectOutputStream을 생성
+
 ### 2) 인터페이스 
 - 직렬화는 인스턴스의 내용이 외부로 유추되는 것이므로 프로그래머가 해당 객체에 대한 직렬화 의도를 표시해야함
+
+## 36-입출력 클래스
+### 1) File 클래스
+- 파일 개념을 추상화한 클래스
+- 입출력 기능은 없음
+- 파일의 이름, 경로, 읽기 전용등의 속성을 알 수 있음
+
+### 2) RandomAccessFile 클래스
+- 입출력 클래스 중 유일하게 파일에 대한 입출력을 동시에함
+- 파일 포인터가 있어서 읽고 쓰는 위치의 이동이 가능
