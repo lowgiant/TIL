@@ -1056,3 +1056,59 @@ static void sTest()| 정적 내부 클래스의 인스턴스 변수(inNum) | X
 ### 2) RandomAccessFile 클래스
 - 입출력 클래스 중 유일하게 파일에 대한 입출력을 동시에함
 - 파일 포인터가 있어서 읽고 쓰는 위치의 이동이 가능
+
+## 36-Thread
+### 1) 특징
+- process 실행 중인 프로그램이 실행되면 OS로 부터 메모리를 할당 받아 프로세스 상태가 됨
+- thread 하나의 프로세스는 하나 이상의 thread를 가지게 됨
+- 실제 작업을 수행하는 단위
+### 2) Multi-threading
+- 여러 thread가 동시에 수행되는 프로그래밍
+- 여러 작업이 동시에 실행되는 효과를 줌
+- 각 thread 사이에 공유하는 자원이 있을 수 있음(static instance)
+- 여러 thread가 자원을 공유해 작업이 수행된 경우 서로 자원을 차지하려는 race condition이 발생
+- 여러 thread가 공유하는 자원 중 경쟁이 발생한 부분을 critical setion 이라고 함
+- critical section에 대한 동기화(일종의 순차적 수행)를 구현하지 않으면 오류가 발생
+### 3) 우선순위
+- Thread.MIN_PRIORITY(=1) ~ Thread.MAX_PRIORITY(=10)
+- 디볼트 우선순위
+- 우선 순위가 높은 Thread가 CPU의 배분을 받을 확률이 높다
+- setPiorrity()/getpriority()
+### 4) join()
+- 동시에 두개 이상의 Thread가 실행 될 때 다른 Thread의 결과를 참조해 실행하는 경우 사용
+- join() 함수를 호출한 Thread가 not-runnalbe 상태
+- 다른 Thread의 수행이 끝나면 runnable 상태로 돌아옴
+### 5) interrupt()
+- 다른 Thread에 예외를 발생시키는 interrupt를 보냄
+- Thread가 join(), sleep(), wait() 함수에 의해 not-runnable 상태일때 
+- interrupt() 메서드를 호출하면 다시 runnable 상태가 될 수 있음
+### 6) Thread 종료
+- 무한 반복의 경우 while(flag)의 flag 변수값을 false로 바꾸어 종료시킴
+### 7) 멀티 Thread 프로그래밍에서 동기화 
+1. critical section과 semaphore
+  - critical section은 두 개 이상의 thread가 동시에 접근 하는 경우 문제가 생길 수 있기 때문에 동시에 접근 할 수 없는 영역
+  - semamphore는 특별한 형태의 시스템 객체로 get/release 두 개의 기능이 있다.
+  - 한 순간 오직 하나의 thread만이 semaphore를 얻을 수 있고, 나머지 thread들은 대기(blocking) 상태가 됨
+  - semamphore를 얻은 thread만이 critical section에 들어감
+### 8) 동기화(synchronization)
+- 두 개의 thread가 같은 객체에 접근 할 경우, 동시에 접근 함으로써 오류가 발생
+- 동기화는 임계영역에 접근한 경우 공유자원을 lock 하여 다른 thread의 접근을 제어
+- 동기화를 잘못 구현하면 deadlock에 빠짐
+### 9) synchronized 블럭
+- 현재 객체 또는 다른 객체를 lock으로 만든다.
+  ```java
+  synchronized(참조형 수식){
+    수행문;
+  }
+  ```
+### 10) synchronized 메서드
+  - 객체의 메서드에 synchronized 키워드 사용
+  - 현재 이 메서드가 속해 있는 개체에 lock을 건다.
+  - 자바에서는 deadlock을 방지하는 기술이 제공되지 않으므로 되도록이면 synchronized 메서드에서 다른 synchronized 메서드는 호출하지 않도록 한다.
+### 11) wait()/notify()
+- 리소스가 어떤 조건에서 더 이상 유효하지 않은 경우 리소스를 기다리기 위해 Thread가 wait() 상태가 됨
+- wait() 상태가 된 Thread은 notify()가 호출 될때까지 기다린다.
+- 유효한 자원이 생기면 notify()가 호출되고 wait() 하고 있는 Thread 중 무작위로 하나의 Thread를 재시작 하도록함
+- notifyAll()이 호출 되는 경우 wait() 하고 있는 모든 Thread가 재시작 됨
+- 이 경우 유효한 리소스만큼의 Thread만이 수행될 수 있고 자원을 갖지 못한 Thread의 경우는 다시 wait() 상태로 만듬
+- 자바에서 notifyAll()메서드 사용 권장
