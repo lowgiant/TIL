@@ -196,3 +196,22 @@
 2. 예외 상황이 발생
    - 0으로 나누는 계산이 발생해 예외 발생을 운영체제에 알려줌
    - 운영체제가 해당 프로세스 실행 중지/ 에러 표시
+
+## 08-프로세스 구조
+### 1) 프로세스
+1. stack 
+  - 임시 데이터(함수 호출, 로컬 변수등)
+2. heap
+  - 코드에서 동적으로 만들어진 데이터
+3. data
+  - 변수/초기화된 데이터
+4. text(Code)
+  - 코드
+### 2) Process Control Block(PCB)
+- 프로세스가 실행 중인 상태를 캡쳐 및 구조화해 저장
+1. Process ID
+2. Register 값
+  1. PC(Program Counter)
+  2. SP(Stack Pointer)
+3. Scheduiling Info(Process State)
+4. Memory Info(메모리 사이즈 limit)
