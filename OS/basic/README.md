@@ -215,3 +215,16 @@
   2. SP(Stack Pointer)
 3. Scheduiling Info(Process State)
 4. Memory Info(메모리 사이즈 limit)
+
+## 09-문맥교환(Context Switching)
+### 1) 특징
+- CPU에 실행할 프로세스를 교체하는 기술
+  1. 실행 중지할 프로세스 정보를 해당 프로세스의 PCB에 업데이트해서 메인 메모리에 저장
+  2. 다음 실행할 프로세스 정보를 메인 메모리에 있는 해당 PCB 정보(PC, SP)를 CPU에 넣고, 실행
+### 2) Cost
+- Cache 초기화
+- Memory Mapping 초기화
+- Kernel은 항상 실행되어야 함.(메모리 접근 위해)
+- 프로세스가 쓰레드 보다 비용이 많이 듬
+  - 쓰레드는 스택 영역을 제외한 모든 메모리를 공유하기 때문
+  - 문맥교환이 발생시 Stack 영역만 변경을 진행하면 됨.
