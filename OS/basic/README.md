@@ -439,3 +439,4 @@ IPC 기법으로 통신 | 필요 없음
 ### 4) 가상 파일 시스템(Virtual File System)
 - Network등 다양한 기기도 동일한 파일 시스템 인터페이스를 통해 관리 기능
   - 예: read/write 시스템콜 사용, 각 기기별 read_spec/write_spec 코드 구현(운영체제 내부)
+
