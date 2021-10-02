@@ -974,3 +974,45 @@ IPC 기법으로 통신 | 필요 없음
       - v : 묶음 / 해제 과정을 화면 표시
       - z : gunzip 사용
       - f : 파일 이름을 지정
+
+## 33-Pthread
+### 1) 특징
+- thread 표준 API
+  - POSIX 스레드, Pthread라고 부름
+- Pthread API
+  - 저수준 API로 100여개의 함수 제공
+  - 복잡하지만, 유닉스 시스템 핵심 스레딩 라이브러리
+  - 다른 스레딩 솔루션도 결국 Pthread를 기반으로 구현돼 익혀둘 가치 있음
+### 2) Pthread 라이브러리
+- <pthread.h>헤더 파일에 정의
+- 모든 함수는 pthread_로 시작
+- 크게 두 가지 그룹
+  - 스레드 관리: 생성, 종료, 조인, 디태치 함수등
+  - 동기화: 뮤텍스 등 동기화 관련 함수
+```c
+gcc - pthread test.c -o test
+
+// 스레드 생성
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);
+
+// 스레드 종료
+void pthread_exit(void *retval);
+
+// 스레드 조인
+int pthread_join(pthread_t thread, void **thread_return);
+pthread_join(p_thread, (void *)&status);
+printf("thread join : %d\n", status); 
+
+// 스레드 디태치
+// 해당 스레드가 종료될 경우, 즉시 관련 리소를 해제(free)
+// pthread_ join를 기다리지 않고, 종료 즉시 리소스를 해제
+
+int pthread_detach(pthread_t thread);
+
+// 뮤텍스 - 상호배제 기법
+pthread_mutex_t mutex_lock = PTHREAD_MUTEX_INITIALIZER;
+// 뮤텍스 락 걸기/풀기
+int pthread_mutex_lock(pthread_mutext_) *mutex);
+int pthread_mutext_unlock(pthread_mutext_t *mutex);
+
+```
