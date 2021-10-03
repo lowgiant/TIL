@@ -1016,3 +1016,19 @@ int pthread_mutex_lock(pthread_mutext_) *mutex);
 int pthread_mutext_unlock(pthread_mutext_t *mutex);
 
 ```
+
+## 34-메모리와 파일 시스템
+### 1) 실제 메모리 동작 방식
+1. mmap실행시, 가상 메모리 주소에 file 주소 매핑(가상메모리 이해)
+2. 해당 메모리 접근 시(요구 페이징, lazy allocation)
+     - 페이지 폴트 인터럽트 발생
+     - OS에서 file data를 복사해 물리 메모리 페이지 넣어줌
+3. 메모리 read 시: 해당 물리 페이지 데이터를 읽으면 됨
+4. 메모리 write 시: 해당 물리 페이지 데이터 수정 후, 페이지 상태 flag 중 dirty bit를 1로 수정
+5. 파일 close 시 물리 페이지 데이터가 file에 업데이트 됨(성능개선)
+### 2) 표준 입출려과 파일 시스템 콜
+- command로 실행되는 프로세스는 세가지 스트림을 가짐
+  1. 표준입력스트림 - stdin
+  2. 표준출력스트림 - stdout
+  3. 오류출력스트림 - stderr
+- 모든 스트림은 일반적인 plain text로 console에 출력해야함 
