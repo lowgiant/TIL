@@ -8,3 +8,4 @@
 ## 3-Web
 ### [web](./doc/3-1-web.md)
 ### [REST](./doc/3-2-REST.md)
+### [URI Design](./doc/3-3-URI.md)
