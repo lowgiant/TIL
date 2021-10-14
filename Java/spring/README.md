@@ -10,3 +10,4 @@
 - [REST](./doc/3-2-REST.md)
 - [URI Design](./doc/3-3-URI.md)
 - [URI Design Pattern](./doc/3-4-URIDesignPattern.md)
+- [Http Protocol](./doc/3-5-HttpProtocol.md)
