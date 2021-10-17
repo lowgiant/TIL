@@ -14,3 +14,4 @@
 ## 4-Spring
 - [Rest Spring Boot](./doc/4-1-RestSpringBoot.md)
 - [스프링 개념](./doc/4-2-spring.md)
+- [Spring Boot Validation](./doc/4-3-SpringBootValidation.md)
