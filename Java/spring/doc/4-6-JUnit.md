@@ -1,4 +1,4 @@
-# JUint
+# JUnit
 ## 1) 특징
 - Java 기반의 단위 테스트를 위한 프레임워크
 - Annotation 기반으로 테스트를 지원
