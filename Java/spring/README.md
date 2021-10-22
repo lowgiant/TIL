@@ -17,5 +17,5 @@
 - [Spring Boot Validation](./doc/4-3-SpringBootValidation.md)
 - [Exception](./doc/4-4-Exception.md)
 - [Filter and Interceptor](./doc/4-5-FilterAndInterceptor.md)
-- [JUnit](./doc/4-6-JUint.md)
+- [JUnit](./doc/4-6-JUnit.md)
 - [Swagger](./doc/4-7-Swagger.md)
