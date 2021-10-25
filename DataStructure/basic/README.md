@@ -1,4 +1,5 @@
 # Data Structure Basic
 ## 1) 선형 자료구조 
-- [list](./doc/1-1-list.md)
-- [stack](./doc/1-2-stack.md)
+- [List](./doc/1-1-list.md)
+- [Stack](./doc/1-2-stack.md)
+- [Queue](./doc/1-3-queue.md)
