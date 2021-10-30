@@ -8,3 +8,4 @@
 ## 2) 비선형 자료구조
 - [Tree](./doc/2-1-Tree.md)
 - [Binary Tree](./doc/2-2-BinaryTree.md)
+- [Spanning Tree](./doc/2-3-SpanningTree.md)
