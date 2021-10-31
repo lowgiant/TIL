@@ -9,3 +9,4 @@
 - [Tree](./doc/2-1-Tree.md)
 - [Binary Tree](./doc/2-2-BinaryTree.md)
 - [Spanning Tree](./doc/2-3-SpanningTree.md)
+- [Graph](./doc/2-4-Graph.md)
