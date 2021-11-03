@@ -11,3 +11,4 @@
 - [Spanning Tree](./doc/2-3-SpanningTree.md)
 - [Graph](./doc/2-4-Graph.md)
 - [Linked List](./doc/2-5-LinkedList.md)
+- [Graph traversal](./doc/2-6-GraphTraversal.md)
