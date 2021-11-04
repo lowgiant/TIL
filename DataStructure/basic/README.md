@@ -12,3 +12,5 @@
 - [Graph](./doc/2-4-Graph.md)
 - [Linked List](./doc/2-5-LinkedList.md)
 - [Graph traversal](./doc/2-6-GraphTraversal.md)
+## 3) 탐색
+- [Search](./doc/3-1-Search.md)
