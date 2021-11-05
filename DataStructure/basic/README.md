@@ -14,3 +14,5 @@
 - [Graph traversal](./doc/2-6-GraphTraversal.md)
 ## 3) 탐색
 - [Search](./doc/3-1-Search.md)
+## 4) 정렬
+- [Sorting](./doc/4-1-Sorting.md)
