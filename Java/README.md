@@ -20,9 +20,9 @@
 ## 3) [Jsp](./jsp/)
 1. 환경설정
     - mac
-    - editor: Intellij 
+    - editor: Intelli-j 
     - tomcat
-    - H2 datebase
+    - DB: H2 datebase
 2. 내용
    - Jsp 관련 샘플예제
 3. 기간
