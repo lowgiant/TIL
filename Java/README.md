@@ -23,6 +23,7 @@
     - editor: Intelli-j 
     - tomcat
     - DB: H2 datebase
+    - plug in: lombok
 2. 내용
    - 서블릿에 대한 내용
    - Jsp 관련 샘플예제
