@@ -20,11 +20,11 @@
 ## 3) [Jsp](./jsp/)
 1. 환경설정
     - mac
-    - editor: Intelli-j 
+    - editor: Intelli-j ultimate 
     - tomcat
     - DB: H2 datebase
     - plug in: lombok
-    - gradle 
+    - gradle
 2. 내용
    - 서블릿에 대한 내용
    - Jsp 관련 샘플예제
